@@ -1,0 +1,7 @@
+{
+    "server": "localhost",
+    "user": "root",
+    "password": "",
+    "dbname": "ingress_definitive",
+    "driver":"pdo_mysql"
+}

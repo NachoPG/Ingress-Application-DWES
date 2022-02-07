@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/styles.css">
+    <link rel="icon"
+        href="https://play-lh.googleusercontent.com/_ddhF4mVY0B7eRvsR8chVVIY-Q8DR1-4WOjqqcPTdrB10Csjd4vdXrbt4x7pEFgmKTA=w512"
+        type="image/x-icon" />
+    <title>Ingress | Profile</title>
+</head>
+
+<body>
+    <nav id="menu">
+        <ul>
+            <li><a href="/agentProfile">Profile</a></li>
+            <li><a href="/uploadStats">Upload Stats</a></li>
+            <li><a href="/rankingAgents">ListRanking</a></li>
+            <li><a href="/events">List Events</a></li>
+            <li><a href="/logout">Logout</a></li>
+        </ul>
+    </nav>
+    <h2>Bienvenido {{agent.getAgentName()}}</h2>
+    <section id="content-profile">
+        <picture id="profile-img">
+            <img src="img/user-image.png" width="130" alt="img-user"/>
+        </picture>
+        <article id="profile-user">
+            <div>
+                <label>Id Agent: <span>{{agent.getIdAgent()}}</span></label>
+            </div>
+            <div>
+                <label>Agent Name: <span>{{agent.getAgentName()}}</span></label>
+            </div>
+            <div>
+                <label>Faction Agent: <span>{{agent.getFaction()}}</span></label>
+            </div>
+            <div>
+                <a href="/evolutionStatsAgent">Comparar Estadisticas de los Eventos</a>
+            </div>
+        </article>
+    </section>
+    <section id="content_stats">
+        <!--Si contiene elementos stats, se muestra una tabla con toda la informacion. Si viene vacio, se muestra un mensaje en pantalla-->
+        {% if stats is empty %}
+        <h2>Juega para vincular tus Estadísticas</h2>
+        {% else %}
+        <h2>Tabla de Estadísticas</h2>
+        <table id="tableRanking">
+            <thead>
+                <tr>
+                    <th>Level</th>
+                    <th>Lifetime Ap</th>
+                    <th>Current Ap</th>
+                    <th>Unique Portals Visited</th>
+                    <th>Unique Portals Drone Visited</th>
+                    <th>Furthest Drone Distance</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for stat in stats %}
+                <tr>
+                    <td>{{stat.getLevel()}}</td>
+                    <td>{{stat.getLifetimeAp()}}</td>
+                    <td>{{stat.getCurrentAp()}}</td>
+                    <td>{{stat.getUniquePortals()}}</td>
+                    <td>{{stat.getUniquePortalsDrone()}}</td>
+                    <td>{{stat.getFurthestDrone()}}</td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+        {% endif %}
+    </section>
+
+</body>
+
+</html>

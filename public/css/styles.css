@@ -1,0 +1,228 @@
+@import url(https://fonts.googleapis.com/css?family=Roboto:300);
+
+/* *{
+  margin: 0px;
+  padding: 0px;
+  box-sizing: border-box;
+} */
+
+.login-page {
+    width: 360px;
+    padding: 8% 0 0;
+    margin: auto;
+}
+.form {
+    position: relative;
+    z-index: 1;
+    background: #ffffff;
+    max-width: 360px;
+    margin: 0 auto 100px;
+    padding: 45px;
+    text-align: center;
+    box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2), 0 5px 5px 0 rgba(0, 0, 0, 0.24);
+}
+.form input {
+    font-family: "Roboto", sans-serif;
+    outline: 0;
+    background: #f2f2f2;
+    width: 100%;
+    border: 0;
+    margin: 5px 0 15px;
+    padding: 15px;
+    box-sizing: border-box;
+    font-size: 14px;
+}
+.form button,
+.form input[type="submit"] {
+    font-family: "Roboto", sans-serif;
+    text-transform: uppercase;
+    outline: 0;
+    background: #4caf50;
+    width: 100%;
+    border: 0;
+    padding: 15px;
+    color: #ffffff;
+    font-size: 14px;
+    -webkit-transition: all 0.3 ease;
+    transition: all 0.3 ease;
+    cursor: pointer;
+}
+.form button:hover,
+.form button:active,
+.form button:focus,
+.form input[type="submit"]:hover {
+    background: #43a047;
+}
+.form .message {
+    margin: 15px 0 0;
+    color: #b3b3b3;
+    font-size: 12px;
+}
+.form .message a {
+    color: #4caf50;
+    text-decoration: none;
+}
+.form .register-form {
+    display: none;
+}
+.container {
+    position: relative;
+    z-index: 1;
+    max-width: 300px;
+    margin: 0 auto;
+}
+.container:before,
+.container:after {
+    content: "";
+    display: block;
+    clear: both;
+}
+.container .info {
+    margin: 50px auto;
+    text-align: center;
+}
+.container .info h1 {
+    margin: 0 0 15px;
+    padding: 0;
+    font-size: 36px;
+    font-weight: 300;
+    color: #1a1a1a;
+}
+.container .info span {
+    color: #4d4d4d;
+    font-size: 12px;
+}
+.container .info span a {
+    color: #000000;
+    text-decoration: none;
+}
+.container .info span .fa {
+    color: #ef3b3a;
+}
+body {
+    background-color: seagreen; /* fallback for old browsers */
+    /* background: -webkit-linear-gradient(right, #76b852, #8DC26F);
+  background: -moz-linear-gradient(right, #76b852, #8DC26F);
+  background: -o-linear-gradient(right, #76b852, #8DC26F);
+  background: linear-gradient(to left, #76b852, #8DC26F); */
+    font-family: "Roboto", sans-serif;
+}
+
+table {
+    margin: 0 auto;
+    border: 1px solid black;
+    border-collapse: collapse;
+    text-align: center;
+    /* box-shadow: 0px 0px 3px black; */
+}
+
+table th {
+    border-bottom: 1px solid black;
+    padding: 0px 5px;
+}
+
+#content_stats {
+    width: 100%;
+}
+#content-profile {
+    width: 100%;
+    max-width: 500px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid black;
+    margin: 0 auto;
+    background-color: #ccc;
+    box-shadow: 0px 0px 2px black;
+}
+#content-profile div {
+    margin: 20px;
+}
+
+#content-profile div span {
+    font-weight: bold;
+    background-color: white;
+    border: 1px solid black;
+    padding: 0px 5px;
+    margin-left: 5px;
+    box-shadow: 0px 0px 2px black;
+}
+
+#content_stats h2 {
+    font-size: 30px;
+    text-align: center;
+    color: white;
+    text-shadow: 0px 2px 2px black;
+    text-transform: uppercase;
+}
+
+#menu ul {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    list-style: none;
+    /* background-color: #fff; */
+    /* width: 100%; */
+
+    border-bottom: 1px solid black;
+}
+
+#menu ul li {
+    display: inline-block;
+    background-color: #ccc;
+    margin: 10px 5px;
+    border-radius: 5px;
+    box-shadow: 0px 0px 2px black;
+    transition: background 300ms;
+}
+
+#menu ul li:hover {
+    background-color: rgb(136, 94, 136);
+    color: white;
+    font-weight: bold;
+}
+
+#menu ul li a {
+    display: block;
+    padding: 3px 10px;
+    text-decoration: none;
+    color: black;
+}
+
+#tableRanking {
+    width: 90%;
+    background-color: white;
+    box-shadow: 0px 0px 2px black;
+}
+
+#tableRanking th {
+    border-bottom: none;
+    height: 30px;
+    background-color: #b8b4b4;
+}
+
+#tableRanking td {
+    height: 25px;
+}
+
+#tableRanking tr:nth-child(even) {
+    background-color: #e7e3e3;
+}
+
+#content_ranking h2 {
+    text-align: center;
+    color: white;
+    text-shadow: 0px 2px 2px black;
+    text-transform: uppercase;
+}
+
+.tableStatsCompare {
+    display: inline-block;
+    border: none;
+}
+
+.tableStatsCompare table {
+    margin: 0 auto;
+    border-collapse: collapse;
+    text-align: center;
+}

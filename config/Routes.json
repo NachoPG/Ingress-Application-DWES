@@ -1,0 +1,43 @@
+{
+    "/":{
+        "controller":"MainController",
+        "action":"main"
+    },
+    "/login":{
+        "controller":"AgentController",
+        "action":"loginAgent"
+    },
+    "/register":{
+        "controller":"AgentController",
+        "action":"registerAgent"
+    },
+    "/agentProfile":{
+        "controller":"AgentController",
+        "action":"agentProfileStats"
+    },
+    "/logout":{
+        "controller":"AgentController",
+        "action":"logoutAgent"
+    },
+    "/uploadStats":{
+        "controller":"AgentController",
+        "action":"uploadStats"
+    },
+    "/rankingAgents":{
+        "controller":"RankingController",
+        "action":"getRankingAgents"
+    },
+    "/events":{
+        "controller":"EventController",
+        "action":"getAllEvents"
+    },
+    "/eventDetail":{
+        "controller":"EventController",
+        "action":"getAgentByEvent"
+    },
+    "/evolutionStatsAgent":{
+        "controller":"AgentController",
+        "action":"getStatsEventsForCompare"
+    }
+    
+}

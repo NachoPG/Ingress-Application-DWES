@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/styles.css">
+    <link rel="icon" href="https://play-lh.googleusercontent.com/_ddhF4mVY0B7eRvsR8chVVIY-Q8DR1-4WOjqqcPTdrB10Csjd4vdXrbt4x7pEFgmKTA=w512" type="image/x-icon" />
+
+    <title>Register | Ingress</title>
+</head>
+
+<body>
+    <div class="login-page">
+        <h2 style="text-align: center; font-size:35px">Registro Ingress</h2>
+        <form action="/register" method="post" class="form">
+            <label for="user">Username <input type="text" name="agent_name"></label>
+            <br />
+            <label for="user">Password <input type="password" name="password"></label>
+            <br />
+            <label for="faction">Faction <input type="text" name="faction"></label>
+            <br />
+            <br />
+            <input type="submit" value="Registrar">
+            <a href="/login">¿Ya tienes cuenta?</a>
+            {% if error %}
+            <p>Error en los datos introducidos. Comprueba todos los campos</p>
+            {% endif %}
+            {% if errorAgentRegistred %}
+            <p>Nombre de usuario ya registrado. Intentelo de nuevo</p>
+            {% endif %}
+        </form>
+    </div>
+
+
+</body>
+
+</html>

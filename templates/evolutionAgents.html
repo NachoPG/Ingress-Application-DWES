@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/styles.css">
+    <link rel="icon"
+        href="https://play-lh.googleusercontent.com/_ddhF4mVY0B7eRvsR8chVVIY-Q8DR1-4WOjqqcPTdrB10Csjd4vdXrbt4x7pEFgmKTA=w512"
+        type="image/x-icon" />
+
+    <title>Ranking Agents | Ingress</title>
+</head>
+
+<body>
+    <nav id="menu">
+        <ul>
+            <li><a href="/agentProfile">Profile</a></li>
+            <li><a href="/uploadStats">Upload Stats</a></li>
+            <li><a href="/rankingAgents">ListRanking</a></li>
+            <li><a href="/events">List Events</a></li>
+            <li><a href="/logout">Logout</a></li>
+        </ul>
+    </nav>
+    <section id="content_ranking">
+        {% if arrayDatos is empty %}
+        <h2>No dispone de estadisticas asociadas a ningún Evento</h2>
+        {% else %}
+        <h2>Tabla de Estadísticas Asociadas a Eventos</h2>
+        {% set headers = ["Lifetime Ap","Unique Portals Visited","Resonators Deployed","Links Created","Control Fields
+        Created","Xm Recharged","Portals Captured","Hacks","Resonators Destroyed"] %}
+
+        <section id="content-tables">
+            <!-- Hacer condicion cuando no haya una segunda subida -->
+            {% for index in arrayDatos %}
+            <h4>Event Alias: {{index[1]["AliasEvent"]}}</h4>
+            <div class="tableStatsCompare">
+                <table>
+                    <tbody>
+                        <tr>
+                            <th></th>
+                            <th>Inicio</th>
+                        </tr>
+                        {% for key,i in index["Inicio"] %}
+                        <tr>
+                            <th>{{headers[key]}}</th>
+                            <td>{{i}}</td>
+                        </tr>
+                        {% endfor %}
+                    </tbody>
+                </table>
+            </div>
+            <div class="tableStatsCompare">
+                <table>
+                    <tbody>
+                        <tr>
+                            <th></th>
+                            <th>Fin</th>
+                        </tr>
+                        {% for j in index["Final"] %}
+                        <tr>
+                            <td>{{j}}</td>
+                        </tr>
+                        {% endfor %}
+                    </tbody>
+                </table>
+            </div>
+            <div class="tableStatsCompare">
+                <table>
+                    <tbody>
+                        <tr>
+                            <th></th>
+                            <th>Diferencia</th>
+                        </tr>
+                        {% for k in index[0]["Diferencia"] %}
+                        <tr>
+                            <td>{{k}}</td>
+                        </tr>
+                        {% endfor %}
+                    </tbody>
+                </table>
+            </div>
+            <br />
+            {% endfor %}
+
+            {% endif %}
+        </section>
+</body>
+
+</html>

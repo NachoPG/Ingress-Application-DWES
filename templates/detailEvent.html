@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/styles.css">
+    <link rel="icon"
+        href="https://play-lh.googleusercontent.com/_ddhF4mVY0B7eRvsR8chVVIY-Q8DR1-4WOjqqcPTdrB10Csjd4vdXrbt4x7pEFgmKTA=w512"
+        type="image/x-icon" />
+
+    <title>Event Detail | Ingress</title>
+</head>
+
+<body>
+    <nav id="menu">
+        <ul>
+            <li><a href="/agentProfile">Profile</a></li>
+            <li><a href="/uploadStats">Upload Stats</a></li>
+            <li><a href="/rankingAgents">ListRanking</a></li>
+            <li><a href="/events">List Events</a></li>
+            <li><a href="/logout">Logout</a></li>
+        </ul>
+    </nav>
+    <section id="content_ranking">
+        {% if agentsEvents %}
+        <h2>Agentes que participan en el evento {{event.getNameEvent()}}</h2>
+        <table id="tableRanking">
+            <thead>
+                <tr>
+                    <th>Id Agente</th>
+                    <th>Nombre</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for agent in agentsEvents %}
+                <tr>
+                    <td>{{agent.getIdAgent()}}</td>
+                    <td>{{agent.getAgentName()}}</td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+        {% else %}
+        <h2>No hay ningún agente que participe en el evento {{event.getNameEvent()}}</h2>
+        {% endif %}
+
+    </section>
+</body>
+
+</html>

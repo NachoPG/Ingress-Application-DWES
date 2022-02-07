@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/styles.css">
+    <link rel="icon"
+        href="https://play-lh.googleusercontent.com/_ddhF4mVY0B7eRvsR8chVVIY-Q8DR1-4WOjqqcPTdrB10Csjd4vdXrbt4x7pEFgmKTA=w512"
+        type="image/x-icon" />
+    <title>UploadStats | Ingress</title>
+</head>
+
+<body>
+    <nav id="menu">
+        <ul>
+            <li><a href="/agentProfile">Profile</a></li>
+            <li><a href="/uploadStats">Upload Stats</a></li>
+            <li><a href="/rankingAgents">ListRanking</a></li>
+            <li><a href="/events">List Events</a></li>
+            <li><a href="/logout">Logout</a></li>
+        </ul>
+    </nav>
+    <center>
+        <h1>Sube tus Estadísticas de Juego</h1>
+        <form action="/uploadStats" method="post">
+            <textarea name="stats" cols="30" rows="10"></textarea>
+            <br />
+            <br />
+            <label for="listEvents">Corresponde a algún evento
+                <select name="listEvents" id="listEvents">
+                    <option value="">Ningún Evento</option>
+                    {% for event in events %}
+                    <option value="{{event.getIdEvent()}}">{{event.getNameEvent()}}</option>
+                    {% endfor %}
+                </select></label>
+            <br />
+            <br />
+
+            <button type="submit">Subir Estadísticas</button>
+        </form>
+        {% if error %}
+        <p>Formato de entrada Incorrectos. Compruebe que los datos esten separados por tabulaciones</p>
+        {% endif %}
+
+        {% if error2 %}
+        <p>Ha habido un problema con la insercion. Por favor vuelva a intentarlo</p>
+        {% endif %}
+
+    </center>
+</body>
+
+</html>
